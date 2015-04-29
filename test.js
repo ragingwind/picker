@@ -45,12 +45,12 @@ var json = {
 }
 
 it('should returns value', function () {
-  assert.equal(picker(json, 'customers.[0]').value, json.customers[0]);
-  assert.equal(picker(json, 'customers.[0].name').value, json.customers[0].name);
-  assert.equal(picker(json, 'accommodations.[0].[0].city').value, 'sf');
-  assert.equal(picker(json, 'accommodations.[0].[1].name').value, 'hilton');
-  assert.equal(picker(json, 'programs.outdoor.price').value, json.programs.outdoor.price);
-  assert.equal(picker(json, 'programs.outdoor.companies.[0]').value, json.programs.outdoor.companies[0]);
+  assert.equal(picker(json, 'customers.[0]'), json.customers[0]);
+  assert.equal(picker(json, 'customers.[0].name'), json.customers[0].name);
+  assert.equal(picker(json, 'accommodations.[0].[0].city'), 'sf');
+  assert.equal(picker(json, 'accommodations.[0].[1].name'), 'hilton');
+  assert.equal(picker(json, 'programs.outdoor.price'), json.programs.outdoor.price);
+  assert.equal(picker(json, 'programs.outdoor.companies.[0]'), json.programs.outdoor.companies[0]);
 });
 
 it('should returns null, missing path', function () {

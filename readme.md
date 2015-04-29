@@ -20,8 +20,7 @@ var prop = picker(json, 'json.properties.object.name');
 
 var prop = picker(json, 'json.properties.array.[0].name');
 
-console.log(prop.value);
-console.log(prop.name);
+console.log(prop);
 ```
 
 
@@ -45,7 +44,7 @@ Path to get to target property. Using string index to get a path to `Array` type
 
 ## Returns
 
-If picker can find a target then will returns object contains name/value or not picker returns null.
+If picker can find a target then will returns reference of object or not picker returns null.
 
 ## License
 

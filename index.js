@@ -5,16 +5,8 @@ function toKey(key) {
   return /\[[0-9]\]/.test(key) ? parseInt(/\[([0-9])\]/.exec(key)[1]) : key;
 }
 
-function pickKey(exp) {
-  exp = exp.split('.');
-  return toKey(exp.pop());
-}
-
 function pickProp(obj, exp) {
-  var prop = {
-    name: pickKey(exp),
-    value: null
-  };
+  var prop = null;
 
   function travelProps(obj, exp) {
     var next = obj[toKey(exp[0])];
@@ -25,7 +17,7 @@ function pickProp(obj, exp) {
       return null;
     }
 
-    prop.value = next;
+    prop = next;
     return travelProps(next, exp.slice(1));
   }
   return travelProps(obj, exp.split('.'));
