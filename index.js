@@ -10,25 +10,6 @@ function pickKey(exp) {
   return toKey(exp.pop());
 }
 
-function pickValue(obj, exp) {
-  var prop = null;
-  var key = pickKey(exp);
-
-  function travelProps(obj, exp) {
-    var next = obj[toKey(exp[0])];
-
-    if (typeof obj !== 'object' || !obj || exp.length === 0) {
-      return prop[key];
-    } else if (!next) { // lost the next
-      return null;
-    }
-
-    prop = obj;
-    return travelProps(next, exp.slice(1));
-  }
-  return travelProps(obj, exp.split('.'));
-}
-
 function pick(obj, exp) {
   var container = null;
   var key = pickKey(exp);
