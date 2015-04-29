@@ -16,11 +16,10 @@ $ npm install --save picker
 var picker = require('picker');
 
 var prop = picker(json, 'json.properties.object.name');
-//=> prop.value = unicorns
+console.log(prop.value, prop.key, prop.container);
 
-var prop = picker(json, 'json.properties.array.[0].name');
-
-console.log(prop);
+var prop = picker(json, 'json.properties.array.[0]');
+console.log(prop.container[0]);
 ```
 
 
@@ -44,7 +43,7 @@ Path to get to target property. Using string index to get a path to `Array` type
 
 ## Returns
 
-If picker can find a target then will returns reference of object or not picker returns null.
+If picker can find a target then will returns its parent, key and value of object or not picker returns null.
 
 ## License
 
