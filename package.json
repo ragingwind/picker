@@ -1,7 +1,7 @@
 {
   "name": "picker",
   "version": "0.1.1",
-  "description": "My tremendous module",
+  "description": "Pick property in json data by string path key",
   "license": "MIT",
   "repository": "ragingwind/picker",
   "author": {

@@ -15,11 +15,13 @@ $ npm install --save picker
 ```js
 var picker = require('picker');
 
-picker(json, 'json.properties.object.name');
-//=> unicorns
+var prop = picker(json, 'json.properties.object.name');
+//=> prop.value = unicorns
 
-picker(json, 'json.properties.array.[0].name');
-//=> unicorns
+var prop = picker(json, 'json.properties.array.[0].name');
+
+console.log(prop.value);
+console.log(prop.name);
 ```
 
 
@@ -40,6 +42,10 @@ Target json data contains name and value to pick
 Type: `string`
 
 Path to get to target property. Using string index to get a path to `Array` type property. You can find more information in the test.js
+
+## Returns
+
+If picker can find a target then will returns object contains name/value or not picker returns null.
 
 ## License
 
